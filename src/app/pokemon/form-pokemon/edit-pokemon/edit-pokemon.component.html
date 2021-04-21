@@ -1,0 +1,6 @@
+ <!-- pokemon? = Affiche le nom du pokemon seulement si le pokemon existe !-->
+    <h2 class="header center">Edition de {{ pokemon?.name }}</h2>
+        <p class="center">
+            <img *ngIf="pokemon" [src]="pokemon.picture"/>
+        </p>
+    <app-form-pokemon [pokemon]="pokemon"></app-form-pokemon>
