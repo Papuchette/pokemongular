@@ -2,12 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Pokemongular</title>
+  <title>Pokémon</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <!-- Polyfill(s) for older browsers -->
+   <script src="https://unpkg.com/core-js@2.5.4/client/shim.min.js"></script>
+   <script src="https://unpkg.com/zone.js@0.10.2?main=browser"></script>
+   <script src="https://unpkg.com/systemjs@0.19.40/dist/system.src.js"></script>
+   <script src="systemjs.config.server.js"></script>
+   <script>
+     System.import('dist/main.js').catch(function(err){ console.error(err); });
+   </script>
 </head>
 <body>
   <app-root></app-root>
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
