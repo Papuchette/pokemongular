@@ -1,31 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-  
+
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Observable, Subject, of } from 'rxjs';
-  
+
 import { PokemonsService } from '../service/pokemons.service';
 import { Pokemon } from '../pokemon';
 
 @Component({
-  selector: 'app-search-pokemon',
-  templateUrl: './search-pokemon.component.html',
-  styleUrls: ['./search-pokemon.component.scss']
+    selector: 'app-search-pokemon',
+    templateUrl: './search-pokemon.component.html',
+    styleUrls: ['./search-pokemon.component.scss']
 })
 export class SearchPokemonComponent implements OnInit {
 
-  private searchTerms = new Subject<string>();
+    private searchTerms = new Subject<string>();
     pokemons$?: Observable<Pokemon[]>;
-   
+
     constructor(
         private pokemonsService: PokemonsService,
         private router: Router) { }
-   
+
     // Ajoute un terme de recherche dans le flux de l'Observable 'searchTerms'
     search(term: string): void {
         this.searchTerms.next(term);
     }
-   
+
     ngOnInit(): void {
         this.pokemons$ = this.searchTerms.pipe(
             // attendre 300ms de pause entre chaque requête
@@ -36,9 +36,9 @@ export class SearchPokemonComponent implements OnInit {
             switchMap((term: string) => this.pokemonsService.searchPokemons(term)),
         );
     }
-   
+
     gotoDetail(pokemon: Pokemon): void {
-        let link = ['/pokemon', pokemon.id];
+        const link = ['/pokemon', pokemon.id];
         this.router.navigate(link);
     }
 

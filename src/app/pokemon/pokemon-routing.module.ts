@@ -15,8 +15,8 @@ const pokemonsRoutes: Routes = [
     canActivate: [AuthGuardService],
     children: [
       { path: 'list', component: ListPokemonComponent },
-      {path:'add', component: AddPokemonComponent},
-      { path: 'edit/:id', component: EditPokemonComponent},
+      { path: 'add', component: AddPokemonComponent },
+      { path: 'edit/:id', component: EditPokemonComponent },
       { path: ':id', component: DetailsPokemonComponent }
     ]
   }

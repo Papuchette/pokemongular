@@ -8,9 +8,9 @@ describe('SearchPokemonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchPokemonComponent ]
+      declarations: [SearchPokemonComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

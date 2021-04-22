@@ -32,7 +32,7 @@ export class ListPokemonComponent implements OnInit {
   }
 
   selectPokemon(pokemon: Pokemon): void {
-    let link = ['/pokemon', pokemon.id]
+    const link = ['/pokemon', pokemon.id]
     this.router.navigate(link);
   }
 

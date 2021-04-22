@@ -13,15 +13,19 @@ import { PokemonsService } from '../service/pokemons.service';
 export class DetailsPokemonComponent implements OnInit {
 
   pokemon?: Pokemon;
-  pokemons?: Pokemon[]
+  pokemons?: Pokemon[];
 
-  constructor(private route: ActivatedRoute, private router: Router, private pokemonsService: PokemonsService, private titleService: Title) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private pokemonsService: PokemonsService,
+    private titleService: Title) { }
 
   ngOnInit(): void {
-    let id = +this.route.snapshot.params['id'];
+    const id = +this.route.snapshot.params['id'];
     this.pokemonsService.getPokemon(id).subscribe(pokemon => {
       this.pokemon = pokemon,
-      this.titleService.setTitle(`Informations sur ${pokemon.name}`);
+        this.titleService.setTitle(`Informations sur ${pokemon.name}`);
     });
 
   }
@@ -31,7 +35,7 @@ export class DetailsPokemonComponent implements OnInit {
   }
 
   goEdit(pokemon: Pokemon): void {
-    let link = ['/pokemon/edit', pokemon.id];
+    const link = ['/pokemon/edit', pokemon.id];
     this.router.navigate(link);
   }
 
