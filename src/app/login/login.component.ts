@@ -4,18 +4,18 @@ import { Router } from '@angular/router';
 import { AuthService } from '../pokemon/service/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+	selector: 'app-login',
+	templateUrl: './login.component.html',
+	styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 
-  message: string = 'Vous êtes déconnecté. (pikachu/pikachu)';
-	 name?: string;
-	 password?: string;
+	message: string = 'Vous êtes déconnecté. (pikachu/pikachu)';
+	name?: string;
+	password?: string;
 
 	constructor(
-	public authService: AuthService,
+		public authService: AuthService,
 		public router: Router,
 		public titleService: Title) { }
 
@@ -25,8 +25,7 @@ export class LoginComponent implements OnInit {
 
 	// Informe l'utilisateur sur son authentfication.
 	setMessage() {
-		this.message = this.authService.isLoggedIn ?
-			'Vous êtes connecté.' : 'Identifiant ou mot de passe incorrect.';
+		this.message = this.authService.isLoggedIn ? 'Vous êtes connecté.' : 'Identifiant ou mot de passe incorrect.';
 	}
 
 	// Connecte l'utilisateur auprès du Guard

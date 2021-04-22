@@ -109,9 +109,9 @@ export class PokemonsService {
     );
   }
   getPokemonTypes(): string[] {
-    return ['Plante', 'Feu', 'Eau', 'Insecte', 'Normal', 'Electrik', 
-    'Poison', 'Fée', 'Vol', 'Roche', 'Sol', 'Psy', 'Spectre', 
-    'Ténèbres', 'Acier', 'Combat', 'Glace', 'Dragon'];
+    return ['Plante', 'Feu', 'Eau', 'Insecte', 'Normal', 'Electrik',
+      'Poison', 'Fée', 'Vol', 'Roche', 'Sol', 'Psy', 'Spectre',
+      'Ténèbres', 'Acier', 'Combat', 'Glace', 'Dragon'];
   }
 
 

@@ -14,7 +14,7 @@ import { SearchPokemonComponent } from './search-pokemon/search-pokemon.componen
 import { LoaderComponent } from '../loader/loader.component';
 
 import { AuthGuardService } from './service/auth-guard.service';
-import { AddPokemonComponent } from './add-pokemon/add-pokemon.component'
+import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
 import { AuthService } from './service/auth.service';
 
 
@@ -31,9 +31,6 @@ import { AuthService } from './service/auth.service';
     LoaderComponent,
     BorderCardDirective,
     PokemonTypeColorPipe,
-    
-    
-    
   ],
   imports: [
     CommonModule,

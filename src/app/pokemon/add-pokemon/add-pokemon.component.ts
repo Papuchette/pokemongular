@@ -15,7 +15,16 @@ export class AddPokemonComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleService.setTitle('Ajouter un pokémon');
-    this.pokemon = new Pokemon();
+    // this.pokemon = new Pokemon();
+    this.pokemon = {
+		  hp: 100,
+		  cp: 10,
+		  name: 'name',
+		  picture: 'http://...',
+		  types: ['Normal'],
+		  typesPicture: ['http://...'],
+		  created: new Date()
+    };
   }
 
 }

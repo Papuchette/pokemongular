@@ -1,31 +1,30 @@
 <h1 class='center'>Liste des Pokémons</h1>
 <div class='container'>
-<div class="row">
-  <app-search-pokemon></app-search-pokemon>
-<div *ngFor='let pokemon of pokemons' class="col s6 m4">
-  <div class="card horizontal" (click)="selectPokemon(pokemon)" pkmnBorderCard>
-    <div class="card-image">
-      <img class="responsive-img" [src]="pokemon.picture">
-    </div>
-    <div class="card-stacked">
-      <div class="card-content">
-        <p>{{ pokemon.name }}</p>
-        <!-- on ajoute le pipe pour les dates, avec le bon format : -->
-        <p><small>{{ pokemon.created | date:"dd/MM/yyyy" }}</small></p>
-        <!-- on utilise la directive ngFor pour afficher tous les types
+  <div class="row">
+    <app-search-pokemon></app-search-pokemon>
+    <div *ngFor='let pokemon of pokemons' class="col s6 m4">
+      <div class="card horizontal" (click)="selectPokemon(pokemon)" app-pkmnBorderCard>
+        <div class="card-image m4">
+          <img class="responsive-img" width="50%" [src]="pokemon.picture">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>{{ pokemon.name }}</p>
+            <!-- on ajoute le pipe pour les dates, avec le bon format : -->
+            <p><small>{{ pokemon.created | date:"dd/MM/yyyy" }}</small></p>
+            <!-- on utilise la directive ngFor pour afficher tous les types
         d'un pokémon donnée -->
-        <!-- <span *ngFor='let type of pokemon.types' class="{{type | pokemonTypeColor}}">{{ type }}</span>-->
-        <img *ngFor="let typePicture of pokemon.typesPicture" class="responsive-img spacing" [src]="typePicture">
+            <!-- <span *ngFor='let type of pokemon.types' class="{{type | pokemonTypeColor}}">{{ type }}</span>-->
+            <img *ngFor="let typePicture of pokemon.typesPicture" class="responsive-img spacing" [src]="typePicture">
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-</div>
-</div>
 
- <!-- Button to add pokemon -->
- <a class="btn-floating btn-large waves-effect waves-light green z-depth-3"
- style="position: fixed; bottom: 25px; right: 25px;"
- routerLink="/pokemon/add" href>
- <strong>+</strong>
+<!-- Button to add pokemon -->
+<a class="btn-floating btn-large waves-effect waves-light green z-depth-3"
+  style="position: fixed; bottom: 25px; right: 25px;" routerLink="/pokemon/add" href>
+  <strong>+</strong>
 </a>

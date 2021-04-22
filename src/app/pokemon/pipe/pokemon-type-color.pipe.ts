@@ -6,9 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PokemonTypeColorPipe implements PipeTransform {
 
   transform(type: string): string {
-  
+
     let color: string;
-  
     switch (type) {
       case 'Feu':
         color = 'fire-type lighten-1';
@@ -43,34 +42,33 @@ export class PokemonTypeColorPipe implements PipeTransform {
       case 'Combat':
         color = 'fight-type lighten-1';
         break;
-        case 'Acier':
+      case 'Acier':
         color = 'steel-type lighten-1';
         break;
-        case 'Dragon':
+      case 'Dragon':
         color = 'dragon-type lighten-1';
         break;
-        case 'Sol':
+      case 'Sol':
         color = 'ground-type lighten-1';
         break;
-        case 'Ténèbres':
+      case 'Ténèbres':
         color = 'darkness-type lighten-1';
         break;
-        case 'Glace':
+      case 'Glace':
         color = 'iceCream-type lighten-1';
         break;
-        case 'Roche':
+      case 'Roche':
         color = 'rock-type lighten-1';
         break;
-        case 'Spectre':
-          color = 'spectrum-type lighten-1';
-          break;
+      case 'Spectre':
+        color = 'spectrum-type lighten-1';
+        break;
       default:
         color = 'grey';
         break;
     }
-  
+
     return 'chip ' + color;
-  
   }
 
 }
